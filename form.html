@@ -12,7 +12,7 @@
     <div id="app">
       <!--headerstart-->
       <header>
-        <h1>Reading Recorder 検索</h1>
+        <h1>Reading Recorder 登録</h1>
         <nav>
           <ul>
             <li><a class="cubic_btn" href="#"><span class="hovering">Home</span><span class="default">Home</span></a></li>
@@ -23,14 +23,8 @@
       <!--headerend-->
       </header>
 
-      <!--topstart-->
-      <section class="top_area">
-        <p>◯件の読書情報が記録されています</p>
-      <!--topend-->
-      </section>
-      <hr />
-
-      <main><!--mainstart-->
+      <!--mainstart-->
+      <main>
         <ul class="book_info">
           <li class="contents">
             <div class="conL">
@@ -47,7 +41,25 @@
             </div>
           </li>
         </ul>
-      </main><!--mainend-->
+      <!--mainend-->
+      </main>
+
+      <hr>
+
+      <!--formstart-->
+      <form class="registration">
+        <div class="regist_date">
+          <p>読了日</p>
+          <input class="date_input" type="text" placeholder="2020/01/01">
+        </div>
+        <div class="regist_review">
+          <p>感想</p>
+          <!-- <input class="review_input" type="textarea" placeholder="感想を入力してください"> -->
+          <textarea class="review_input" placeholder="感想を入力してください" wrap="soft"></textarea>
+        </div>
+        <button class="regist_btn">登録</button>
+      <!--formend-->
+      </form>
 
     <!--Vueend-->
     </div>
