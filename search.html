@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.min.css" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="./css/reset.css" >
+    <link rel="stylesheet" href="./css/style.min.css" >
     <title>vue_sampleapp</title>
   </head>
   <body>
@@ -15,28 +15,30 @@
         <h1>Reading Recorder 検索</h1>
         <nav>
           <ul>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Home</span><span class="default">Home</span></a></li>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Search</span><span class="default">Search</span></a></li>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Support</span><span class="default">Support</span></a></li>
+            <li><a class="cubic-btn" href="./index.html"><span class="hovering">Home</span><span class="default">Home</span></a></li>
+            <li><a class="cubic-btn" href="./search.html"><span class="hovering">Search</span><span class="default">Search</span></a></li>
+            <li><a class="cubic-btn" href="#"><span class="hovering">Support</span><span class="default">Support</span></a></li>
           </ul>
         </nav>
       <!--headerend-->
       </header>
 
       <!--topstart-->
-      <section class="top_area search">
+      <section class="top-area search">
         <p>キーワード</p>
-        <input class ="search_input" type="text" placeholder="入力してください" />
-        <button class="search_btn">検索</button>
+        <form v-on:submit.prevent>
+          <input class ="search-input" type="text" placeholder="入力してください" v-model="keyword">
+          <button class="search-btn">検索</button>
+        </form>
       <!--topend-->
       </section>
-      <hr />
+      <pre>デバッグ用{{keyword}}</pre><!--完成後消す-->
 
       <main><!--mainstart-->
-        <ul class="book_info">
+        <ul class="book-info">
           <li class="contents">
             <div class="conL">
-              <img src="./img/cat_3.jpeg" alt="検索した本の画像" />
+              <img src="./img/cat_3.jpeg" alt="検索した本の画像" >
             </div>
             <div class="conR">
               <ul>
@@ -56,5 +58,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
   </body>
 </html>

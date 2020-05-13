@@ -3,49 +3,45 @@
   box-sizing: border-box;
 }
 
-body {
-  padding: 1em;
-}
 header {
   margin:  0 1rem;
   h1 {
     font-size: 2rem;
+    letter-spacing: .5rem;
     padding: 1rem 0;
-    letter-spacing: 0.5rem;
   }
   nav {
     border: solid 1px black;
     ul {
-      width: 60%;
-      padding: 1rem;
-      list-style: none;
       display: flex;
-      li:first-of-type {
-        a {
-          margin-left: 0;
-        }
-      }
-      .cubic_btn {
-        letter-spacing: 0.5rem;
-        color: black;
-        text-decoration: none;
+      list-style: none;
+      padding: 1rem;
+      li{
         margin-left: 2rem;
-        height: 50px;
-        width: 150px;
-        position: relative;
+      }
+      li:first-of-type {
+        margin-left: 0;
+      }
+      .cubic-btn {
+        color: black;
         display: inline-block;
-        transform-style: preserve-3d;
+        height: 50px;
+        letter-spacing: .5rem;
         perspective: 300px;
+        position: relative;
+        text-decoration: none;
+        transform-style: preserve-3d;
+        width: 150px;
         & span {
           border: solid 1px black;
-          text-align: center;
-          line-height: 48px;
-          position: absolute;
-          width: 100%;
           height: 100%;
-          top: 0;
+          line-height: 48px;
           left: 0;
-          transition: all 0.3s;
+          position: absolute;
+          text-align: center;
+          top: 0;
+          transition: all .3s;
+          width: 100%;
         }
         & .hovering {
           background-color: black;
@@ -72,46 +68,43 @@ header {
   }
 }
 
-.top_area {
+.top-area {
   padding: 2rem 1rem;
 }
 
 input {
-  height: 2rem;
   border: solid 1px black;
+  height: 2rem;
   padding-left: 1rem;
 }
 button {
-  color: white;
   background-color: gray;
   border: solid 1px gray;
+  color: white;
+  cursor: pointer;
   height: calc(2rem + 2px);
   width: 4rem;
-  cursor: pointer;
-}
-hr{
-  width: calc(100% - 2rem);
 }
 
 .search {
-  display: flex;
   align-items: center;
-  &_input,
-  &_btn {
+  display: flex;
+  &-input,
+  &-btn {
     margin-left: 1rem;
   }
 }
 
-.book_info {
+.book-info {
   .contents {
     display: flex;
     .conL {
-      width: 30%;
       padding: 1rem;
+      width: 30%;
       img {
-        width: 100%;
         height: 100%;
         object-fit: cover;
+        width: 100%;
       }
     }
     .conR {
@@ -125,25 +118,25 @@ hr{
   p {
     width: 100px;
   }
-  .regist_date {
+  .regist-date {
     display: flex;
-    .date_input {
+    .date-input {
     }
   }
-  .regist_review {
+  .regist-review {
+    display: flex;
     margin: 1rem 0;
-    display: flex;
-    .review_input {
-      width: calc(100% - 100px);
+    .review-input {
       height: 10rem;
-      padding: 0.5rem 1rem;
+      padding: .5rem 1rem;
+      width: calc(100% - 100px);
     }
   }
-  .regist_btn {
-    letter-spacing: 1.5rem;
+  .regist-btn {
     font-size: 1.3rem;
     height: 3rem;
-    width: calc(100% - 100px);
+    letter-spacing: 1.5rem;
     margin-left: 100px;
+    width: calc(100% - 100px);
   }
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.min.css" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="./css/reset.css" >
+    <link rel="stylesheet" href="./css/style.min.css" >
     <title>vue_sampleapp</title>
   </head>
   <body>
@@ -15,9 +15,9 @@
         <h1>Reading Recorder 登録</h1>
         <nav>
           <ul>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Home</span><span class="default">Home</span></a></li>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Search</span><span class="default">Search</span></a></li>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Support</span><span class="default">Support</span></a></li>
+            <li><a class="cubic-btn" href="./index.html"><span class="hovering">Home</span><span class="default">Home</span></a></li>
+            <li><a class="cubic-btn" href="./search.html"><span class="hovering">Search</span><span class="default">Search</span></a></li>
+            <li><a class="cubic-btn" href="#"><span class="hovering">Support</span><span class="default">Support</span></a></li>
           </ul>
         </nav>
       <!--headerend-->
@@ -25,18 +25,18 @@
 
       <!--mainstart-->
       <main>
-        <ul class="book_info">
+        <ul class="book-info">
           <li class="contents">
             <div class="conL">
-              <img src="./img/cat_3.jpeg" alt="検索した本の画像" />
+              <img v-bind:src="books[0].path" alt="検索した本の画像" >
             </div>
             <div class="conR">
               <ul>
-                <li>No</li>
-                <li>タイトル：</li>
-                <li>著者：</li>
-                <li>出版：</li>
-                <li>発売：</li>
+                <li>No: {{books[0].no}}</li>
+                <li>タイトル： {{books[0].title}}</li>
+                <li>著者： {{books[0].author}}</li>
+                <li>出版： {{books[0].publisher}}</li>
+                <li>発売： {{books[0].releaseDate}}</li>
               </ul>
             </div>
           </li>
@@ -44,22 +44,21 @@
       <!--mainend-->
       </main>
 
-      <hr>
-
       <!--formstart-->
-      <form class="registration">
-        <div class="regist_date">
+      <form class="registration" v-on:submit.prevent>
+        <div class="regist-date">
           <p>読了日</p>
-          <input class="date_input" type="text" placeholder="2020/01/01">
+          <input class="date-input" type="text" placeholder="2020/01/01" v-model="reviewDate">
         </div>
-        <div class="regist_review">
+        <div class="regist-review">
           <p>感想</p>
-          <!-- <input class="review_input" type="textarea" placeholder="感想を入力してください"> -->
-          <textarea class="review_input" placeholder="感想を入力してください" wrap="soft"></textarea>
+          <textarea class="review-input" placeholder="感想を入力してください" wrap="soft" v-model="comment"></textarea>
         </div>
-        <button class="regist_btn">登録</button>
+        <button class="regist-btn" v-on:click="addReview">登録</button>
       <!--formend-->
       </form>
+
+      <pre>データデバッグ用{{reviews}}</pre><!--完成後消す-->
 
     <!--Vueend-->
     </div>

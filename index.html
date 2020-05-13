@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.min.css" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="./css/reset.css" >
+    <link rel="stylesheet" href="./css/style.min.css" >
     <title>vue_sampleapp</title>
   </head>
   <body>
@@ -15,34 +15,33 @@
         <h1>Reading Recorder 検索</h1>
         <nav>
           <ul>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Home</span><span class="default">Home</span></a></li>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Search</span><span class="default">Search</span></a></li>
-            <li><a class="cubic_btn" href="#"><span class="hovering">Support</span><span class="default">Support</span></a></li>
+            <li><a class="cubic-btn" href="./index.html"><span class="hovering">Home</span><span class="default">Home</span></a></li>
+            <li><a class="cubic-btn" href="./search.html"><span class="hovering">Search</span><span class="default">Search</span></a></li>
+            <li><a class="cubic-btn" href="#"><span class="hovering">Support</span><span class="default">Support</span></a></li>
           </ul>
         </nav>
       <!--headerend-->
       </header>
 
       <!--topstart-->
-      <section class="top_area">
+      <section class="top-area">
         <p>◯件の読書情報が記録されています</p>
       <!--topend-->
       </section>
-      <hr />
 
       <main><!--mainstart-->
-        <ul class="book_info">
+        <ul class="book-info" v-for="book in books">
           <li class="contents">
             <div class="conL">
-              <img src="./img/cat_3.jpeg" alt="検索した本の画像" />
+              <img v-bind:src="book.path" alt="検索した本の画像" >
             </div>
             <div class="conR">
               <ul>
-                <li>No</li>
-                <li>タイトル：</li>
-                <li>著者：</li>
-                <li>出版：</li>
-                <li>発売：</li>
+                <li>No: {{book.no}}</li>
+                <li>タイトル： {{book.title}}</li>
+                <li>著者： {{book.author}}</li>
+                <li>出版： {{book.publisher}}</li>
+                <li>発売： {{book.releaseDate}}</li>
               </ul>
             </div>
           </li>
